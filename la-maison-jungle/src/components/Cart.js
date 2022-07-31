@@ -9,8 +9,10 @@ function Cart() {
   return (<div className="cart">
     <h2>Mon Panier</h2>
     <div>
-      <li>Monstera : {monsteraPrice}</li>
-      <button onClick={() => updateCart(cart + 1)}></button>
+      Monstera : {monsteraPrice}€
+      <button onClick={() => updateCart(cart + 1)}>
+        Ajouter
+      </button>
     </div>
     <div>Total : { monsteraPrice * cart}€</div>
   </div>)
