@@ -1,17 +1,18 @@
 import '../styles/Cart.css'
+import { useState } from 'react'
+
 
 function Cart() {
   const monsteraPrice = 8
-  const lierrePrice = 10
-  const fleursPrice = 15
+  const [cart, updateCart] = useState(0)
+
   return (<div className="cart">
     <h2>Mon Panier</h2>
-    <ul>
+    <div>
       <li>Monstera : {monsteraPrice}</li>
-      <li>Lierre : {lierrePrice}</li>
-      <li>Fleurs : {fleursPrice}</li>
-    </ul>
-    <div>Total : { monsteraPrice + lierrePrice + fleursPrice} Euros</div>
+      <button onClick={() => updateCart(cart + 1)}></button>
+    </div>
+    <div>Total : { monsteraPrice * cart}€</div>
   </div>)
 }
 
