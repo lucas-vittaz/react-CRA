@@ -2,7 +2,7 @@ import { plantList } from '../datas/plantList'
 import PlantItem from './PlantItem'
 import '../styles/ShoppingList.css'
 
-function ShoppingList() {
+function ShoppingList({cart, updateCart}) {
 	const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
@@ -27,6 +27,7 @@ function ShoppingList() {
 					/>
 				))}
 			</ul>
+      <button onClick="">Ajouter au panier</button> 
 		</div>
 	)
 }
