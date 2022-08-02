@@ -4,8 +4,12 @@ import Cart from './Cart'
 import Footer from './Footer'
 import ShoppingList from './ShoppingList'
 import '../styles/Layout.css'
+import { useState } from 'react'
 
 function App() {
+
+  const [cart, updateCart] = useState([])
+  
 	return (
 		<div>
 			<Banner>
@@ -13,8 +17,8 @@ function App() {
 				<h1 className='title'>La maison jungle</h1>
 			</Banner>
 			<div className='layout-inner'>
-				<Cart />
-				<ShoppingList />
+				<Cart cart={cart} updateCart={updateCart}/>
+				<ShoppingList cart={cart} updateCart={updateCart}/>
 			</div>
 			<Footer />
 		</div>
